@@ -18,18 +18,28 @@ public class User {
 	@Column private String firstName;
 	@Column private String lastName;
 	@Column private String username;
+	@Column private String email;
 	@Column private String password;
 	
 	public User() {
 		super();
 	}
 	
-	public User(int id, String firstName, String lastName, String username, String password) {
+	public User(int id, String username, String email, String password) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.email = email;
+		this.password = password;
+	}
+	
+	public User(int id, String firstName, String lastName, String username, String email,String password) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.username = username;
+		this.email = email;
 		this.password = password;
 	}
 
@@ -64,6 +74,14 @@ public class User {
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	
+	public String getEmaild() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public String getPassword() {
 		return password;
@@ -73,5 +91,5 @@ public class User {
 		this.password = password;
 	}
 
-
+	
 }

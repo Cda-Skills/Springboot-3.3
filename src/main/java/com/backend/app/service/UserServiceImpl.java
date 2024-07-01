@@ -10,8 +10,6 @@ import com.backend.app.repository.UserRepository;
 
 import jakarta.transaction.Transactional;
 
-
-
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {
@@ -20,8 +18,8 @@ public class UserServiceImpl implements UserService {
 	private UserRepository userRepository;
 
 	@Override
-	public User insert(User userVO) {
-		return this.userRepository.save(userVO);
+	public User insert(User user) {
+		return this.userRepository.save(user);
 	}
 
 	@Override
@@ -41,9 +39,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User updateUser(int id, User userVO) {
-		userVO.setId(id);
-		return this.userRepository.save(userVO);
+	public User updateUser(int id, User user) {
+		user.setId(id);
+		return this.userRepository.save(user);
 	}
 
 

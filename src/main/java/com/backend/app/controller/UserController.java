@@ -19,7 +19,7 @@ import com.backend.app.model.User;
 import com.backend.app.service.UserService;
 
 @RestController
-@RequestMapping(value = "user")
+@RequestMapping(value = "signup")
 @CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
 
@@ -29,9 +29,9 @@ public class UserController {
 
 	@PostMapping
 	@ResponseStatus(value = HttpStatus.CREATED)
-	public User registerUser(@RequestBody User userVO) {
+	public User registerUser(@RequestBody User user) {
 
-		return this.userService.insert(userVO);
+		return this.userService.insert(user);
 	}
 
 	@GetMapping
@@ -49,9 +49,9 @@ public class UserController {
 
 	@PutMapping(value = "/{id}")
 	@ResponseStatus(value = HttpStatus.OK)
-	public User updateUser(@PathVariable int id, @RequestBody User userVO) {
+	public User updateUser(@PathVariable int id, @RequestBody User user) {
 
-		return this.userService.updateUser(id, userVO);
+		return this.userService.updateUser(id, user);
 	}
 
 	@DeleteMapping(value = "/{id}")
