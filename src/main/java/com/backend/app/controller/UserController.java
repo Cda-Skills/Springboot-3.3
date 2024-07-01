@@ -19,7 +19,7 @@ import com.backend.app.model.User;
 import com.backend.app.service.UserService;
 
 @RestController
-@RequestMapping(value = "signup")
+@RequestMapping(value = "user")
 @CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
 
@@ -29,7 +29,7 @@ public class UserController {
 
 	@PostMapping
 	@ResponseStatus(value = HttpStatus.CREATED)
-	public User registerUser(@RequestBody User user) {
+	public User createUser(@RequestBody User user) {
 
 		return this.userService.insert(user);
 	}
