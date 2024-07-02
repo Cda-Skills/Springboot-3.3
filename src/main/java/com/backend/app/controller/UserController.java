@@ -60,5 +60,13 @@ public class UserController {
 
 		this.userService.delete(id);
 	}
+	
+	@DeleteMapping
+	@ResponseStatus(value = HttpStatus.NO_CONTENT)
+	public void deleteAllUsers(){
+
+		this.userService.deleteAll();
+	}
+	
 
 }

@@ -11,27 +11,32 @@ import jakarta.persistence.Table;
 @Table(name = "TABLE_USERS")
 public class User {
 
-	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Id private int id;
+	@Id
+	private int id;
 
-	@Column private String firstName;
-	@Column private String lastName;
-	@Column private String username;
-	@Column private String email;
-	@Column private String password;
-	
+	@Column
+	private String firstName;
+	@Column
+	private String lastName;
+	@Column
+	private String username;
+	@Column
+	private String email;
+	@Column
+	private String password;
+
 	public User() {
 		super();
 	}
-	
+
 	public User(String username, String email, String password) {
 		super();
 		this.username = username;
 		this.email = email;
 		this.password = password;
 	}
-	
+
 	public User(int id, String username, String email, String password) {
 		super();
 		this.id = id;
@@ -39,8 +44,8 @@ public class User {
 		this.email = email;
 		this.password = password;
 	}
-	
-	public User(int id, String firstName, String lastName, String username, String email,String password) {
+
+	public User(int id, String firstName, String lastName, String username, String email, String password) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -81,8 +86,8 @@ public class User {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	
-	public String getEmaild() {
+
+	public String getEmail() {
 		return email;
 	}
 
@@ -98,5 +103,4 @@ public class User {
 		this.password = password;
 	}
 
-	
 }
